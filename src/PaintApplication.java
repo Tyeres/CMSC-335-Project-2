@@ -9,6 +9,7 @@ import ConcreteClasses.TwoDimensionalShapes.Circle;
 import ConcreteClasses.TwoDimensionalShapes.Rectangle;
 import ConcreteClasses.TwoDimensionalShapes.Square;
 import ConcreteClasses.TwoDimensionalShapes.Triangle;
+import ShapePanes.CirclePane;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,6 +29,7 @@ public class PaintApplication extends Application {
         mainPane.setPadding(new Insets(10, 10, 10, 10));
         ListView<Shape> shapeList = new ListView<>(getShapeList());
         mainPane.getChildren().add(shapeList);
+        mainPane.getChildren().add(new CirclePane());
 
         Scene scene = new Scene(mainPane);
         primaryStage.setScene(scene);
