@@ -16,6 +16,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -27,9 +28,23 @@ public class PaintApplication extends Application {
         HBox mainPane = new HBox(5);
         // Set insets
         mainPane.setPadding(new Insets(10, 10, 10, 10));
+        // This is the listview
         ListView<Shape> shapeList = new ListView<>(getShapeList());
+        // Add it to the pane
         mainPane.getChildren().add(shapeList);
+        // We don't want multiple selections
+        shapeList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        // Display the circle by default
         mainPane.getChildren().add(new CirclePane());
+        // Set action to listView
+        shapeList.getSelectionModel().selectedItemProperty().addListener(e-> {
+            // Display the selected pane
+            // Remove the one displayed
+            mainPane.getChildren().remove(1);
+        });
+
+
+
 
         Scene scene = new Scene(mainPane);
         primaryStage.setScene(scene);

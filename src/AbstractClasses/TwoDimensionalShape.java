@@ -24,4 +24,9 @@ public abstract class TwoDimensionalShape extends Shape {
     // HOWEVER, The area should be calculated in a child class's setter methods for its properties.
     protected abstract void calculateArea();
 
+    // Getter method
+    public double getArea() {
+        return area;
+    }
+
 }
