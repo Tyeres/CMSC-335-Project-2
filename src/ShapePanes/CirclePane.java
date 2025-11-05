@@ -23,7 +23,7 @@ public class CirclePane extends VBox implements Control{
     private final ComboBox<Integer> radiusComboBox = new ComboBox<>(getListOfIntegers());
     // Display circle here
     private final javafx.scene.shape.Circle circleDrawing = new javafx.scene.shape.Circle();
-    // The text for area
+    // The text for area output
     private final Label areaText = new Label();
 
 
@@ -39,7 +39,7 @@ public class CirclePane extends VBox implements Control{
         circleDrawing.setStrokeWidth(2);
         circleDrawing.setFill(Color.TRANSPARENT);
         // Style the text
-        areaText.setStyle("-fx-underline:true");
+        areaText.setStyle("-fx-font-size:14px;");
         // Default text for user input
         radiusTextInput.setPromptText("Insert radius here");
         // We want the control options to be displayed horizontally in this pane. We use an HBox for that
@@ -58,13 +58,13 @@ public class CirclePane extends VBox implements Control{
         getChildren().add(outputPane);
 
         // Set the action for the text input
-        radiusTextInput.setOnAction(e->{
+        radiusTextInput.setOnKeyTyped(e->{
             try {
                 // The input is the radius
                 double radius = Double.parseDouble(radiusTextInput.getText());
                 // Use the radii
                 circle.setRadius(radius);
-                circleDrawing.setRadius(radius);
+                circleDrawing.setRadius(radius + BASE_SHAPE_SIZE);
                 // Output area
                 areaText.setText("Area: "+ circle.getArea());
 
@@ -84,9 +84,5 @@ public class CirclePane extends VBox implements Control{
             // Output area
             areaText.setText("Area: " + circle.getArea());
         });
-    }
-    // This will be used in the List View to display the list of shapes
-    public String toString() {
-        return circle.getClass().getSimpleName();
     }
 }

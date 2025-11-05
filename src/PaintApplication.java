@@ -10,10 +10,12 @@ import ConcreteClasses.TwoDimensionalShapes.Rectangle;
 import ConcreteClasses.TwoDimensionalShapes.Square;
 import ConcreteClasses.TwoDimensionalShapes.Triangle;
 import ShapePanes.CirclePane;
+import ShapePanes.RectanglePane;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
@@ -21,8 +23,13 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class PaintApplication extends Application {
+    // The nodes will be saved here
+    private static final Node[] shapes = new Node[9];
     @Override
     public void start(Stage primaryStage) {
+        // Initialize the array
+        shapes[0] = new CirclePane();
+        shapes[1] = new RectanglePane();
 
         // Main pane
         HBox mainPane = new HBox(5);
@@ -34,13 +41,26 @@ public class PaintApplication extends Application {
         mainPane.getChildren().add(shapeList);
         // We don't want multiple selections
         shapeList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        // We do this because we want a default shape selected
+        shapeList.getSelectionModel().selectFirst();
         // Display the circle by default
-        mainPane.getChildren().add(new CirclePane());
+        mainPane.getChildren().add(shapes[0]);
         // Set action to listView
         shapeList.getSelectionModel().selectedItemProperty().addListener(e-> {
             // Display the selected pane
+
             // Remove the one displayed
             mainPane.getChildren().remove(1);
+
+            // Add selected pane
+            switch (shapeList.getSelectionModel().getSelectedItem().toString()) {
+                case "Circle":
+                    mainPane.getChildren().add(shapes[0]);
+                    break;
+                case "Rectangle":
+                    mainPane.getChildren().add(shapes[1]);
+                    break;
+            }
         });
 
 
