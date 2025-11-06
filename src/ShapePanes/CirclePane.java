@@ -15,6 +15,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class CirclePane extends VBox implements Control{
+    // There is a max drawing radius so that the circle cannot blow up the window
+    private final static int MAX_RADIUS_DRAWING = 100;
     // The shape for calculation
     private final Circle circle = new Circle();
     // Enter radius here
@@ -64,7 +66,10 @@ public class CirclePane extends VBox implements Control{
                 double radius = Double.parseDouble(radiusTextInput.getText());
                 // Use the radii
                 circle.setRadius(radius);
-                circleDrawing.setRadius(radius + BASE_SHAPE_SIZE);
+                // This is done so that the circle cannot blow up the window
+                if (radius < MAX_RADIUS_DRAWING)
+                    circleDrawing.setRadius(radius + BASE_SHAPE_SIZE);
+                else circleDrawing.setRadius(MAX_RADIUS_DRAWING + BASE_SHAPE_SIZE);
                 // Output area
                 areaText.setText("Area: "+ circle.getArea());
 

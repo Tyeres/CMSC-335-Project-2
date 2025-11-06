@@ -16,7 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class SquarePane extends VBox implements Control {
-
+    private final static int MAX_SIDE_DRAWING = 250;
     // The shape for calculation
     private final Square square = new Square();
     // Enter side here
@@ -66,8 +66,13 @@ public class SquarePane extends VBox implements Control {
                 double side = Double.parseDouble(sideTextInput.getText());
                 // Use the side
                 square.setSide(side);
-                squareDrawing.setHeight(side + BASE_SHAPE_SIZE);
-                squareDrawing.setWidth(side + BASE_SHAPE_SIZE);
+                if(side < MAX_SIDE_DRAWING) {
+                    squareDrawing.setHeight(side + BASE_SHAPE_SIZE);
+                    squareDrawing.setWidth(side + BASE_SHAPE_SIZE);
+                } else {
+                    squareDrawing.setHeight(MAX_SIDE_DRAWING + BASE_SHAPE_SIZE);
+                    squareDrawing.setWidth(MAX_SIDE_DRAWING + BASE_SHAPE_SIZE);
+                }
                 // Output area
                 areaText.setText("Area: "+ square.getArea());
 

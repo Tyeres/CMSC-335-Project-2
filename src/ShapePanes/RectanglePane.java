@@ -15,7 +15,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class RectanglePane extends VBox implements Control{
-
+    // This is used to that the rectangle cannot blow up the window
+    private final static int MAX_LENGTH_DRAWING = 200;
     // The shape for calculation
     private final Rectangle rectangle = new Rectangle();
     // Enter length here
@@ -83,7 +84,10 @@ public class RectanglePane extends VBox implements Control{
             double length = Double.parseDouble(lengthTextInput.getText());
             // Use the length
             rectangle.setLength(length);
-            rectangleDrawing.setWidth(length + BASE_SHAPE_SIZE);
+            // This is done so that you cannot blow up the rectangle to too large of a size
+            if (length < MAX_LENGTH_DRAWING)
+                rectangleDrawing.setWidth(length + BASE_SHAPE_SIZE);
+            else rectangleDrawing.setWidth(BASE_SHAPE_SIZE + MAX_LENGTH_DRAWING);
             // Output area
             areaText.setText("Area: "+ rectangle.getArea());
 
@@ -99,7 +103,10 @@ public class RectanglePane extends VBox implements Control{
             double height = Double.parseDouble(heightTextInput.getText());
             // Use the height
             rectangle.setHeight(height);
-            rectangleDrawing.setHeight(height + BASE_SHAPE_SIZE);
+            // This is done so that you cannot blow up the rectangle to too large of a size
+            if(height < MAX_LENGTH_DRAWING)
+                rectangleDrawing.setHeight(height + BASE_SHAPE_SIZE);
+            else rectangleDrawing.setHeight(BASE_SHAPE_SIZE + MAX_LENGTH_DRAWING);
             // Output area
             areaText.setText("Area: "+ rectangle.getArea());
 
@@ -113,7 +120,10 @@ public class RectanglePane extends VBox implements Control{
         int length = lengthComboBox.getValue(); // This is an int because the combo box only has int options
         // Set length
         rectangle.setLength(length);
-        rectangleDrawing.setWidth(length + BASE_SHAPE_SIZE);
+        // This is done so that you cannot blow up the rectangle to too large of a size
+        if (length < MAX_LENGTH_DRAWING)
+            rectangleDrawing.setWidth(length + BASE_SHAPE_SIZE);
+        else rectangleDrawing.setWidth(BASE_SHAPE_SIZE + MAX_LENGTH_DRAWING);
         // Output area
         areaText.setText("Area: " + rectangle.getArea());
     }
@@ -121,7 +131,10 @@ public class RectanglePane extends VBox implements Control{
         int height = heightComboBox.getValue(); // This is an int because the combo box only has int options
         // Set height
         rectangle.setHeight(height);
-        rectangleDrawing.setHeight(height + BASE_SHAPE_SIZE);
+        // This is done so that you cannot blow up the rectangle to too large of a size
+        if(height < MAX_LENGTH_DRAWING)
+            rectangleDrawing.setHeight(height + BASE_SHAPE_SIZE);
+        else rectangleDrawing.setHeight(BASE_SHAPE_SIZE + MAX_LENGTH_DRAWING);
         // Output area
         areaText.setText("Area: " + rectangle.getArea());
     }

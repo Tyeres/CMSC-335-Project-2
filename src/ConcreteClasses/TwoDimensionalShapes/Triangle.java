@@ -47,12 +47,6 @@ public class Triangle extends TwoDimensionalShape {
         return base;
     }
 
-    // Used by TrianglePane to find if the properties have been set. This needs to be known before trying
-    // to draw the triangle
-    public boolean isCreated() {
-        return height != 0 && base != 0;
-    }
-
     @Override
     public void menuPrint(Scanner scan) {
 

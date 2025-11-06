@@ -15,8 +15,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class TrianglePane extends VBox implements Control{
-
-
+    // This represents a max size for the side lengths of the triangle drawing so that it doesn't blow up the window
+    private final static double MAX_LENGTH_DRAWING = 250.0;
     // The shape for calculation
     private final Triangle triangle = new Triangle();
     // Enter base here
@@ -84,9 +84,8 @@ public class TrianglePane extends VBox implements Control{
             double base = Double.parseDouble(baseTextInput.getText());
             // Use the base
             triangle.setBase(base);
-            if(triangle.isCreated()) {
-                setTriangleDrawing(base, triangle.getHeight());
-            }
+            setTriangleDrawing(base, triangle.getHeight());
+
             // Output area
             areaText.setText("Area: "+ triangle.getArea());
 
@@ -102,9 +101,8 @@ public class TrianglePane extends VBox implements Control{
             double height = Double.parseDouble(heightTextInput.getText());
             // Use the height
             triangle.setHeight(height);
-            if(triangle.isCreated()) {
-                setTriangleDrawing(triangle.getBase(), height);
-            }
+            setTriangleDrawing(triangle.getBase(), height);
+
             // Output area
             areaText.setText("Area: "+ triangle.getArea());
 
@@ -118,9 +116,8 @@ public class TrianglePane extends VBox implements Control{
         int base = baseComboBox.getValue(); // This is an int because the combo box only has int options
         // Set base
         triangle.setBase(base);
-        if(triangle.isCreated()) {
-            setTriangleDrawing(base, triangle.getHeight());
-        }
+        setTriangleDrawing(base, triangle.getHeight());
+
         // Output area
         areaText.setText("Area: " + triangle.getArea());
     }
@@ -128,13 +125,19 @@ public class TrianglePane extends VBox implements Control{
         int height = heightComboBox.getValue(); // This is an int because the combo box only has int options
         // Set height
         triangle.setHeight(height);
-        if(triangle.isCreated()) {
-            setTriangleDrawing(triangle.getBase(), height);
-        }
+        // We only want to draw if the second field (the base) has also been given.
+        setTriangleDrawing(triangle.getBase(), height);
+
         // Output area
         areaText.setText("Area: " + triangle.getArea());
     }
+    // Used to draw the triangle's points, since there is no simple Triangle JavaFX class
     private void setTriangleDrawing(double base, double height) {
+        // These drawing stipulations are put on the dimensions so that they do not blow up the window
+        if (base >= MAX_LENGTH_DRAWING)
+            base = MAX_LENGTH_DRAWING;
+        if (height >= MAX_LENGTH_DRAWING)
+            height = MAX_LENGTH_DRAWING;
         // Reset the drawing
         triangleDrawing.getPoints().clear();
         // Draw the triangle as a right triangle with the corresponding values
