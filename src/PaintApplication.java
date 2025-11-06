@@ -6,6 +6,7 @@
 import ShapePanes.CirclePane;
 import ShapePanes.RectanglePane;
 import ShapePanes.SquarePane;
+import ShapePanes.TrianglePane;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,6 +29,7 @@ public class PaintApplication extends Application {
         shapePaneArray[0] = new CirclePane();
         shapePaneArray[1] = new RectanglePane();
         shapePaneArray[2] = new SquarePane();
+        shapePaneArray[3] = new TrianglePane();
 
         // Main pane
         HBox mainPane = new HBox(5);
@@ -61,6 +63,8 @@ public class PaintApplication extends Application {
                 case "Square":
                     mainPane.getChildren().add(shapePaneArray[2]);
                     break;
+                case "Triangle":
+                    mainPane.getChildren().add(shapePaneArray[3]);
             }
         });
 

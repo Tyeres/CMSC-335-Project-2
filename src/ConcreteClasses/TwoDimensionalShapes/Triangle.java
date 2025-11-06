@@ -28,11 +28,29 @@ public class Triangle extends TwoDimensionalShape {
         this.area = this.base * this.height / 2;
     }
 
-    // Setter method. Calculate new area within the setter method
+    // Getter and setter methods. Calculate new area within the setter methods
 
     public void setBase(double base) {
         this.base = base;
         calculateArea();
+    }
+    public void setHeight(double height) {
+        this.height = height;
+        calculateArea();
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public double getBase() {
+        return base;
+    }
+
+    // Used by TrianglePane to find if the properties have been set. This needs to be known before trying
+    // to draw the triangle
+    public boolean isCreated() {
+        return height != 0 && base != 0;
     }
 
     @Override
