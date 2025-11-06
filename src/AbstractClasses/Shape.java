@@ -26,9 +26,4 @@ public abstract class Shape {
      * It will receive data from the scanner so that it can determine area/volume.
      */
     public abstract void menuPrint(Scanner scan);
-
-    // The ListView uses this to display the names of the Shapes
-    public String toString() {
-        return getClass().getSimpleName();
-    }
 }

@@ -80,7 +80,7 @@ public class CirclePane extends VBox implements Control{
             int radius = radiusComboBox.getValue(); // This is an int because the combo box only has int options
             // Set radii
             circle.setRadius(radius);
-            circleDrawing.setRadius(radius);
+            circleDrawing.setRadius(radius + BASE_SHAPE_SIZE);
             // Output area
             areaText.setText("Area: " + circle.getArea());
         });

@@ -1,3 +1,7 @@
+// Name: Aidan Snyder
+// Course: CMSC 335
+// Assignment: Project 2
+// Date: 11/7/2025
 package ShapePanes;
 
 import ConcreteClasses.TwoDimensionalShapes.Rectangle;
