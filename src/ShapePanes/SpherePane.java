@@ -42,7 +42,7 @@ public class SpherePane extends VBox implements Control{
         classText.setStyle("-fx-font-weight: bold; -fx-font-size: 24px;");
         getChildren().add(classText);
         // Set the characteristics of the sphere drawing
-        Image sphereImage = new Image(Objects.requireNonNull(SpherePane.class.
+        Image sphereImage = new Image(Objects.requireNonNull(Control.class.
                 getResource("ShapeImages/"+sphere.getClass().getSimpleName()+".png")).toString()); // Get image
         sphereDrawing.setImage(sphereImage);
         sphereDrawing.setPreserveRatio(true);

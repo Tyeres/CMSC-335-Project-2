@@ -27,9 +27,14 @@ public class Cylinder extends ThreeDimensionalShape {
         this.volume = Math.PI * radius * radius * height;
     }
 
-    // Setter method. Calculate new volume when property changes
+    // Setter methods. Calculate new volume when a property changes
     public void setHeight(double height) {
         this.height = height;
+        calculateVolume();
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
         calculateVolume();
     }
 

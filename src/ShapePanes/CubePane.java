@@ -37,7 +37,7 @@ public class CubePane extends VBox implements Control {
         classText.setStyle("-fx-font-weight: bold; -fx-font-size: 24px;");
         getChildren().add(classText);
         // Set the characteristics of the cube drawing
-        Image sphereImage = new Image(Objects.requireNonNull(SpherePane.class.
+        Image sphereImage = new Image(Objects.requireNonNull(Control.class.
                 getResource("ShapeImages/"+cube.getClass().getSimpleName()+".png")).toString()); // Get image
         cubeDrawing.setImage(sphereImage);
         cubeDrawing.setPreserveRatio(true);
