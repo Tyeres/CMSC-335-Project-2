@@ -29,6 +29,7 @@ public class PaintApplication extends Application {
         shapePaneArray[3] = new TrianglePane();
         shapePaneArray[4] = new SpherePane();
         shapePaneArray[5] = new CubePane();
+        shapePaneArray[6] = new ConePane();
 
         // Main pane
         HBox mainPane = new HBox(5);
@@ -70,6 +71,9 @@ public class PaintApplication extends Application {
                     break;
                 case "Cube":
                     mainPane.getChildren().add(shapePaneArray[5]);
+                    break;
+                case "Cone":
+                    mainPane.getChildren().add(shapePaneArray[6]);
                     break;
             }
         });

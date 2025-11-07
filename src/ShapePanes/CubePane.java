@@ -32,11 +32,11 @@ public class CubePane extends VBox implements Control {
     public CubePane() {
         super(5); // Padding 5
         this.setAlignment(Pos.TOP_CENTER);
-        // Circle text
+        // Cube text
         Label classText = new Label(cube.getClass().getSimpleName());
         classText.setStyle("-fx-font-weight: bold; -fx-font-size: 24px;");
         getChildren().add(classText);
-        // Set the characteristics of the cube
+        // Set the characteristics of the cube drawing
         Image sphereImage = new Image(Objects.requireNonNull(SpherePane.class.
                 getResource("ShapeImages/"+cube.getClass().getSimpleName()+".png")).toString()); // Get image
         cubeDrawing.setImage(sphereImage);

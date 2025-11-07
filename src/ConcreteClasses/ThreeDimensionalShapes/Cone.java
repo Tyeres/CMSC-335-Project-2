@@ -27,10 +27,15 @@ public class Cone extends ThreeDimensionalShape {
         this.volume = 1d/3 * Math.PI * radius * radius * height;
     }
 
-    // Setter method. Calculate volume when height changes
+    // Setter methods. Calculate volume when changes are made
 
     public void setHeight(double height) {
         this.height = height;
+        calculateVolume();
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
         calculateVolume();
     }
 
