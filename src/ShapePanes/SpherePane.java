@@ -43,10 +43,10 @@ public class SpherePane extends VBox implements Control{
         getChildren().add(classText);
         // Set the characteristics of the sphere
         Image sphereImage = new Image(Objects.requireNonNull(SpherePane.class.
-                getResource("ShapeImages/Sphere.png")).toString());
+                getResource("ShapeImages/"+sphere.getClass().getSimpleName()+".png")).toString()); // Get image
         sphereDrawing.setImage(sphereImage);
         sphereDrawing.setPreserveRatio(true);
-        sphereDrawing.setFitWidth(MAX_SIZE_DRAWING / 2d); // Default photo size is the max size divided by two
+        sphereDrawing.setFitWidth(1d); // Default photo size is 1
         // Style the text
         volumeText.setStyle("-fx-font-size:14px;");
         // Default text for user input
