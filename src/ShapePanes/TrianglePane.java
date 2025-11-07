@@ -144,7 +144,7 @@ public class TrianglePane extends VBox implements Control{
         triangleDrawing.getPoints().addAll(
                 // 100.0 and 50.0 make the default orientation for the right triangle.
                 100.0, 50.0,   // Point 1: (x1, y1) top
-                100.0, 50.0 + BASE_SHAPE_SIZE + height,   // Point 2: (x2, y2) bottom
+                100.0, 50.0 + BASE_SHAPE_SIZE + height,   // Point 2: (x2, y2) bottom left
                 100.0 + BASE_SHAPE_SIZE + base, 50.0 + BASE_SHAPE_SIZE + height   // Point 3: (x3, y3) bottom right
         );
     }

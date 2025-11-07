@@ -24,4 +24,8 @@ public abstract class ThreeDimensionalShape extends Shape {
     // HOWEVER, The volume should be calculated in a child class's setter methods for its properties.
     protected abstract void calculateVolume();
 
+    // Getter method
+    public double getVolume() {
+        return volume;
+    }
 }
