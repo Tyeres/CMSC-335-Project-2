@@ -2,10 +2,11 @@
 // Course: CMSC 335
 // Assignment: Project 2
 // Date: 11/7/2025
-package ShapePanes;
+package ShapePanes.TwoDimensional;
 
 
 import ConcreteClasses.TwoDimensionalShapes.Square;
+import ShapePanes.Control;
 import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;

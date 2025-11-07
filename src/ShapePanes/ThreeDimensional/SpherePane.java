@@ -3,9 +3,10 @@
 // Assignment: Project 2
 // Date: 11/7/2025
 
-package ShapePanes;
+package ShapePanes.ThreeDimensional;
 
 import ConcreteClasses.ThreeDimensionalShapes.Sphere;
+import ShapePanes.Control;
 import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -18,7 +19,7 @@ import javafx.scene.layout.VBox;
 
 import java.util.Objects;
 
-public class SpherePane extends VBox implements Control{
+public class SpherePane extends VBox implements Control {
 
     // There is a max drawing radius so that the sphere cannot blow up the window
     private final static int MAX_SIZE_DRAWING = 250;

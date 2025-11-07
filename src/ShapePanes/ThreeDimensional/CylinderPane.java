@@ -1,6 +1,7 @@
-package ShapePanes;
+package ShapePanes.ThreeDimensional;
 
 import ConcreteClasses.ThreeDimensionalShapes.Cylinder;
+import ShapePanes.Control;
 import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;

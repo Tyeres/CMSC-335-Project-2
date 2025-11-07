@@ -2,9 +2,10 @@
 // Course: CMSC 335
 // Assignment: Project 2
 // Date: 11/7/2025
-package ShapePanes;
+package ShapePanes.TwoDimensional;
 
 import ConcreteClasses.TwoDimensionalShapes.Rectangle;
+import ShapePanes.Control;
 import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -14,7 +15,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class RectanglePane extends VBox implements Control{
+public class RectanglePane extends VBox implements Control {
     // This is used to that the rectangle cannot blow up the window
     private final static int MAX_LENGTH_DRAWING = 200;
     // The shape for calculation

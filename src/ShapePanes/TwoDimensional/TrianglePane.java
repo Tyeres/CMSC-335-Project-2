@@ -2,9 +2,10 @@
 // Course: CMSC 335
 // Assignment: Project 2
 // Date: 11/7/2025
-package ShapePanes;
+package ShapePanes.TwoDimensional;
 
 import ConcreteClasses.TwoDimensionalShapes.Triangle;
+import ShapePanes.Control;
 import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -14,7 +15,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class TrianglePane extends VBox implements Control{
+public class TrianglePane extends VBox implements Control {
     // This represents a max size for the side lengths of the triangle drawing so that it doesn't blow up the window
     private final static double MAX_LENGTH_DRAWING = 250.0;
     // The shape for calculation

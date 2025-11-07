@@ -3,7 +3,14 @@
 // Assignment: Project 2
 // Date: 11/7/2025
 
-import ShapePanes.*;
+import ShapePanes.ThreeDimensional.ConePane;
+import ShapePanes.ThreeDimensional.CubePane;
+import ShapePanes.ThreeDimensional.CylinderPane;
+import ShapePanes.ThreeDimensional.SpherePane;
+import ShapePanes.TwoDimensional.CirclePane;
+import ShapePanes.TwoDimensional.RectanglePane;
+import ShapePanes.TwoDimensional.SquarePane;
+import ShapePanes.TwoDimensional.TrianglePane;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
