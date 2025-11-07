@@ -61,7 +61,7 @@ public class ConePane extends VBox implements Control {
         optionsContainer.getChildren().add(radiusComboBox);
         optionsContainer.getChildren().add(heightTextInput);
         optionsContainer.getChildren().add(heightComboBox);
-        // The cone shape and the area will be outputted here
+        // The cone shape and the volume will be outputted here
         BorderPane outputPane = new BorderPane();
         // Set the output pane
         outputPane.setTop(volumeText);

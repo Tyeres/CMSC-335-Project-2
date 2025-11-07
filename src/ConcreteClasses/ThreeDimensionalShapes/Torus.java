@@ -15,6 +15,7 @@ public class Torus extends ThreeDimensionalShape {
     private double bigRadius; // The radius of the major circle
     private double smallRadius; // The radius of the minor circle
     // See https://www.geeksforgeeks.org/maths/how-to-find-the-volume-of-a-torus/
+    // Also see https://www.mathsisfun.com/geometry/torus.html
 
     // Constructor
     public Torus() {
@@ -28,13 +29,28 @@ public class Torus extends ThreeDimensionalShape {
         this.volume = 2d * Math.PI * Math.PI * smallRadius * smallRadius * bigRadius;
     }
 
-    // Setter method. Calculate new volume within the setter method when property changes
+    // Getter methods
+
+    public double getBigRadius() {
+        return bigRadius;
+    }
+
+    public double getSmallRadius() {
+        return smallRadius;
+    }
+
+
+    // Setter methods. Calculate new volume within the setter methods when a property changes
 
     public void setBigRadius(double bigRadius) {
         this.bigRadius = bigRadius;
         calculateVolume();
     }
 
+    public void setSmallRadius(double smallRadius) {
+        this.smallRadius = smallRadius;
+        calculateVolume();
+    }
 
     @Override
     public void menuPrint(Scanner scan) {

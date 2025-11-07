@@ -3,10 +3,7 @@
 // Assignment: Project 2
 // Date: 11/7/2025
 
-import ShapePanes.ThreeDimensional.ConePane;
-import ShapePanes.ThreeDimensional.CubePane;
-import ShapePanes.ThreeDimensional.CylinderPane;
-import ShapePanes.ThreeDimensional.SpherePane;
+import ShapePanes.ThreeDimensional.*;
 import ShapePanes.TwoDimensional.CirclePane;
 import ShapePanes.TwoDimensional.RectanglePane;
 import ShapePanes.TwoDimensional.SquarePane;
@@ -38,6 +35,7 @@ public class PaintApplication extends Application {
         shapePaneArray[5] = new CubePane();
         shapePaneArray[6] = new ConePane();
         shapePaneArray[7] = new CylinderPane();
+        shapePaneArray[8] = new TorusPane();
 
         // Main pane
         HBox mainPane = new HBox(5);
@@ -86,12 +84,18 @@ public class PaintApplication extends Application {
                 case "Cylinder":
                     mainPane.getChildren().add(shapePaneArray[7]);
                     break;
+                case "Torus":
+                    mainPane.getChildren().add(shapePaneArray[8]);
+                    break;
             }
         });
 
         Scene scene = new Scene(mainPane);
         primaryStage.setScene(scene);
         primaryStage.show();
+        // It's too small by default because the strings for the TextFields were not fully visible.
+        // This fixes it.
+        primaryStage.setWidth(550d);
 
     }
     // This is used for the ListView. It displays the list of shapePaneArray.
