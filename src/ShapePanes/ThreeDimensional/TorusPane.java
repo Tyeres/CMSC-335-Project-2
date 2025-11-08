@@ -1,3 +1,7 @@
+// Name: Aidan Snyder
+// Course: CMSC 335
+// Assignment: Project 2
+// Date: 11/7/2025
 package ShapePanes.ThreeDimensional;
 
 import ConcreteClasses.ThreeDimensionalShapes.Torus;
@@ -94,10 +98,11 @@ public class TorusPane extends VBox implements Control {
         try {
             // The input is the smallRadius
             double smallRadius = Double.parseDouble(smallRadiusTextInput.getText());
-            // Check if the smallRadius is valid
-            if (smallRadius < torus.getBigRadius()) {
-                // Use the smallRadius
-                torus.setSmallRadius(smallRadius);
+
+            // Use the smallRadius
+            torus.setSmallRadius(smallRadius);
+            // Check if the bigRadius is valid. We have to set them before checking, or it can cause bugs
+            if (torus.areRadiiValid()) {
 
                 // We only want this to run once before the picture was shown.
                 // This is also saying that when you try to display the picture for the first time,
@@ -128,10 +133,12 @@ public class TorusPane extends VBox implements Control {
         try {
             // The input is the bigRadius
             double bigRadius = Double.parseDouble(bigRadiusTextInput.getText());
-            // Check if the bigRadius is valid
-            if (bigRadius > torus.getSmallRadius()) {
-                // Use the bigRadius
-                torus.setBigRadius(bigRadius);
+
+            // Use the bigRadius
+            torus.setBigRadius(bigRadius);
+
+            // Check if the bigRadius is valid. We have to set them before checking, or it can cause bugs
+            if (torus.areRadiiValid()) {
                 // We only want this to run once before the picture was shown.
                 // This is also saying that when you try to display the picture for the first time,
                 // both fields have to be filled out
@@ -157,10 +164,11 @@ public class TorusPane extends VBox implements Control {
 
     private void setSmallRadiusComboBox() {
         int smallRadius = smallRadiusComboBox.getValue(); // This is an int because the combo box only has int options
-        // Check if the smallRadius is valid
-        if (smallRadius < torus.getBigRadius()) {
-            // Set smallRadius
-            torus.setSmallRadius(smallRadius);
+
+        // Set smallRadius
+        torus.setSmallRadius(smallRadius);
+        // Check if the bigRadius is valid. We have to set them before checking, or it can cause bugs
+        if (torus.areRadiiValid()) {
             // We only want this to run once before the picture was shown.
             // This is also saying that when you try to display the picture for the first time,
             // both fields have to be filled out
@@ -180,10 +188,11 @@ public class TorusPane extends VBox implements Control {
 
     private void setBigRadiusComboBox() {
         int bigRadius = bigRadiusComboBox.getValue(); // This is an int because the combo box only has int options
-        // Check if the bigRadius is valid
-        if (bigRadius > torus.getSmallRadius()) {
-            // Set bigRadius
-            torus.setBigRadius(bigRadius);
+
+        // Set bigRadius
+        torus.setBigRadius(bigRadius);
+        // Check if the bigRadius is valid. We have to set them before checking, or it can cause bugs
+        if (torus.areRadiiValid()) {
             // We only want this to run once before the picture was shown.
             // This is also saying that when you try to display the picture for the first time,
             // both fields have to be filled out

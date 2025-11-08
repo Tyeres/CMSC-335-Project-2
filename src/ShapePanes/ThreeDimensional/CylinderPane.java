@@ -1,3 +1,7 @@
+// Name: Aidan Snyder
+// Course: CMSC 335
+// Assignment: Project 2
+// Date: 11/7/2025
 package ShapePanes.ThreeDimensional;
 
 import ConcreteClasses.ThreeDimensionalShapes.Cylinder;
@@ -71,18 +75,18 @@ public class CylinderPane extends VBox implements Control {
         getChildren().add(outputPane);
 
         // Set the action for the radius text input
-        radiusTextInput.setOnKeyTyped(e-> setCylinderRadiusTextField());
+        radiusTextInput.setOnKeyTyped(e-> setRadiusTextField());
 
         // Set on action for the radius combo box
-        radiusComboBox.setOnAction(e-> setCylinderRadiusComboBox());
+        radiusComboBox.setOnAction(e-> setRadiusComboBox());
 
         // Set the action for the height text input
-        heightTextInput.setOnKeyTyped(e-> setCylinderHeightTextField());
+        heightTextInput.setOnKeyTyped(e-> setHeightTextField());
 
         // Set on action for the height combo box
         heightComboBox.setOnAction(e-> setCylinderHeightComboBox());
     }
-    private void setCylinderRadiusTextField() {
+    private void setRadiusTextField() {
         try {
             // The input is the radius
             double radius = Double.parseDouble(radiusTextInput.getText());
@@ -101,7 +105,7 @@ public class CylinderPane extends VBox implements Control {
             // (The user did not insert a number in the text field)
         }
     }
-    private void setCylinderHeightTextField() {
+    private void setHeightTextField() {
         try {
             // The input is the height
             double height = Double.parseDouble(heightTextInput.getText());
@@ -120,7 +124,7 @@ public class CylinderPane extends VBox implements Control {
             // (The user did not insert a number in the text field)
         }
     }
-    private void setCylinderRadiusComboBox() {
+    private void setRadiusComboBox() {
         int radius = radiusComboBox.getValue(); // This is an int because the combo box only has int options
         // Set radius
         cylinder.setRadius(radius);

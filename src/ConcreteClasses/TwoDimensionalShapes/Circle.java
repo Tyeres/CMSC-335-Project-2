@@ -7,9 +7,6 @@ package ConcreteClasses.TwoDimensionalShapes;
 
 import AbstractClasses.TwoDimensionalShape;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Circle extends TwoDimensionalShape {
     // The radius
     private double radius;
@@ -32,25 +29,4 @@ public class Circle extends TwoDimensionalShape {
         calculateArea();
     }
 
-    @Override
-    public void menuPrint(Scanner scan) {
-        System.out.println("\nYou have selected a Circle.\n");
-        boolean continueLoop = true; // Use to loop until user input is validated
-        double radius = 0; // temp radius variable
-        // Make sure the input is a number by repeating the question until valid input is received
-        while(continueLoop) {
-            System.out.println("\nWhat is the radius?\n");
-            try {
-                radius = scan.nextDouble();
-                // The input is validated. We can now exit the loop.
-                continueLoop = false;
-            } catch (InputMismatchException e) {
-                // Clear the trash input
-                scan.nextLine();
-                System.out.println("\nSorry. I don't understand.\n");
-            }
-        }
-        setRadius(radius);
-        System.out.println("\nThe area of the Circle is " + this.area + "\n");
-    }
 }

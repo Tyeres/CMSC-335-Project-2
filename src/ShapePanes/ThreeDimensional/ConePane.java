@@ -1,3 +1,7 @@
+// Name: Aidan Snyder
+// Course: CMSC 335
+// Assignment: Project 2
+// Date: 11/7/2025
 package ShapePanes.ThreeDimensional;
 
 import ConcreteClasses.ThreeDimensionalShapes.Cone;
@@ -72,18 +76,18 @@ public class ConePane extends VBox implements Control {
         getChildren().add(outputPane);
 
         // Set the action for the radius text input
-        radiusTextInput.setOnKeyTyped(e-> setConeRadiusTextField());
+        radiusTextInput.setOnKeyTyped(e-> setRadiusTextField());
 
         // Set on action for the radius combo box
-        radiusComboBox.setOnAction(e-> setConeRadiusComboBox());
+        radiusComboBox.setOnAction(e-> setRadiusComboBox());
 
         // Set the action for the height text input
-        heightTextInput.setOnKeyTyped(e-> setConeHeightTextField());
+        heightTextInput.setOnKeyTyped(e-> setHeightTextField());
 
         // Set on action for the height combo box
-        heightComboBox.setOnAction(e-> setConeHeightComboBox());
+        heightComboBox.setOnAction(e-> setHeightComboBox());
     }
-    private void setConeRadiusTextField() {
+    private void setRadiusTextField() {
         try {
             // The input is the radius
             double radius = Double.parseDouble(radiusTextInput.getText());
@@ -102,7 +106,7 @@ public class ConePane extends VBox implements Control {
             // (The user did not insert a number in the text field)
         }
     }
-    private void setConeHeightTextField() {
+    private void setHeightTextField() {
         try {
             // The input is the height
             double height = Double.parseDouble(heightTextInput.getText());
@@ -121,7 +125,7 @@ public class ConePane extends VBox implements Control {
             // (The user did not insert a number in the text field)
         }
     }
-    private void setConeRadiusComboBox() {
+    private void setRadiusComboBox() {
         int radius = radiusComboBox.getValue(); // This is an int because the combo box only has int options
         // Set radius
         cone.setRadius(radius);
@@ -132,7 +136,7 @@ public class ConePane extends VBox implements Control {
         // Output volume
         volumeText.setText("Volume: " + cone.getVolume());
     }
-    private void setConeHeightComboBox() {
+    private void setHeightComboBox() {
         int height = heightComboBox.getValue(); // This is an int because the combo box only has int options
         // Set height
         cone.setHeight(height);

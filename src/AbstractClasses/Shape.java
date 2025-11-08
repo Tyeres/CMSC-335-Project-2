@@ -5,8 +5,6 @@
 
 package AbstractClasses;
 
-import java.util.Scanner;
-
 public abstract class Shape {
     private final int numberOfDimensions;
 
@@ -20,10 +18,4 @@ public abstract class Shape {
     public int getNumberOfDimensions() {
         return this.numberOfDimensions;
     }
-
-    /**
-     * This will be used to print data when a shape is selected in the menu.
-     * It will receive data from the scanner so that it can determine area/volume.
-     */
-    public abstract void menuPrint(Scanner scan);
 }

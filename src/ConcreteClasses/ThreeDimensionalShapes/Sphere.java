@@ -7,9 +7,6 @@ package ConcreteClasses.ThreeDimensionalShapes;
 
 import AbstractClasses.ThreeDimensionalShape;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Sphere extends ThreeDimensionalShape {
 
     private double radius;
@@ -28,28 +25,5 @@ public class Sphere extends ThreeDimensionalShape {
     public void setRadius(double radius) {
         this.radius = radius;
         calculateVolume();
-    }
-
-    @Override
-    public void menuPrint(Scanner scan) {
-        System.out.println("\nYou have selected a Sphere.\n");
-        // Use for user validation. Loop until input is validated
-        boolean continueLoop = true;
-        double radius = 0; // Temp radius variable
-        // Make sure the input is a number by repeating the question until valid input is received
-        while(continueLoop) {
-            System.out.println("\nWhat is the radius?\n");
-            try {
-                radius = scan.nextDouble();
-                // The input is validated. We can now exit the loop.
-                continueLoop = false;
-            } catch (InputMismatchException e) {
-                // Clear the trash input
-                scan.nextLine();
-                System.out.println("\nSorry. I don't understand.\n");
-            }
-        }
-        setRadius(radius);
-        System.out.println("\nThe volume of the Sphere is " + this.volume + "\n");
     }
 }
