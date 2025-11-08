@@ -7,9 +7,6 @@ package ConcreteClasses.TwoDimensionalShapes;
 
 import AbstractClasses.TwoDimensionalShape;
 
-/**
- * A Square is a rectangle. This is why we extend the Rectangle class.
- */
 public class Square extends TwoDimensionalShape {
     // A square has equal sides
     private double side;

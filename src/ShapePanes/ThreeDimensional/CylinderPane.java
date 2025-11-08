@@ -84,7 +84,7 @@ public class CylinderPane extends VBox implements Control {
         heightTextInput.setOnKeyTyped(e-> setHeightTextField());
 
         // Set on action for the height combo box
-        heightComboBox.setOnAction(e-> setCylinderHeightComboBox());
+        heightComboBox.setOnAction(e-> setHeightComboBox());
     }
     private void setRadiusTextField() {
         try {
@@ -135,7 +135,7 @@ public class CylinderPane extends VBox implements Control {
         // Output volume
         volumeText.setText("Volume: " + cylinder.getVolume());
     }
-    private void setCylinderHeightComboBox() {
+    private void setHeightComboBox() {
         int height = heightComboBox.getValue(); // This is an int because the combo box only has int options
         // Set height
         cylinder.setHeight(height);
