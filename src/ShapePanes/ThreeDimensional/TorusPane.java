@@ -56,8 +56,8 @@ public class TorusPane extends VBox implements Control {
         // Style the text
         volumeText.setStyle("-fx-font-size:14px;");
         // Default text for user inputs
-        smallRadiusTextInput.setPromptText("Insert small radius here");
-        bigRadiusTextInput.setPromptText("Insert big radius here");
+        smallRadiusTextInput.setPromptText("Insert small radius");
+        bigRadiusTextInput.setPromptText("Insert big radius");
         // We want the control options to be displayed horizontally in this pane. We use an HBox for that
         HBox optionsContainer = new HBox(5);
         // Add the text input options into the horizontal pane
