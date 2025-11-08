@@ -68,18 +68,18 @@ public class RectanglePane extends VBox implements Control {
         getChildren().add(outputPane);
 
         // Set the action for the length text input
-        lengthTextInput.setOnKeyTyped(e->setRectangleLengthTextField());
+        lengthTextInput.setOnKeyTyped(e-> setLengthTextField());
 
         // Set on action for the length combo box
-        lengthComboBox.setOnAction(e-> setRectangleLengthComboBox());
+        lengthComboBox.setOnAction(e-> setLengthComboBox());
 
         // Set the action for the height text input
-        heightTextInput.setOnKeyTyped(e->setRectangleHeightTextField());
+        heightTextInput.setOnKeyTyped(e-> setHeightTextField());
 
         // Set on action for the height combo box
-        heightComboBox.setOnAction(e-> setRectangleHeightComboBox());
+        heightComboBox.setOnAction(e-> setHeightComboBox());
     }
-    private void setRectangleLengthTextField() {
+    private void setLengthTextField() {
         try {
             // The input is the length
             double length = Double.parseDouble(lengthTextInput.getText());
@@ -98,7 +98,7 @@ public class RectanglePane extends VBox implements Control {
             // (The user did not insert a number in the text field)
         }
     }
-    private void setRectangleHeightTextField() {
+    private void setHeightTextField() {
         try {
             // The input is the height
             double height = Double.parseDouble(heightTextInput.getText());
@@ -117,7 +117,7 @@ public class RectanglePane extends VBox implements Control {
             // (The user did not insert a number in the text field)
         }
     }
-    private void setRectangleLengthComboBox() {
+    private void setLengthComboBox() {
         int length = lengthComboBox.getValue(); // This is an int because the combo box only has int options
         // Set length
         rectangle.setLength(length);
@@ -128,7 +128,7 @@ public class RectanglePane extends VBox implements Control {
         // Output area
         areaText.setText("Area: " + rectangle.getArea());
     }
-    private void setRectangleHeightComboBox() {
+    private void setHeightComboBox() {
         int height = heightComboBox.getValue(); // This is an int because the combo box only has int options
         // Set height
         rectangle.setHeight(height);
