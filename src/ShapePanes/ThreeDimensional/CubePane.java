@@ -27,7 +27,7 @@ public class CubePane extends VBox implements Control {
     // Enter side here
     private final TextField sideTextInput = new TextField();
     // Alternative to the above text input. Select a cube instead.
-    private final ComboBox<Integer> sideComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> sideComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display cube here
     private final ImageView cubeDrawing = new ImageView();
     // The text for volume output

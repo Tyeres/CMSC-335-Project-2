@@ -23,7 +23,7 @@ public class SquarePane extends VBox implements Control {
     // Enter side here
     private final TextField sideTextInput = new TextField();
     // Alternative to the above text input. Select a side instead.
-    private final ComboBox<Integer> sideComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> sideComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display square here
     private final javafx.scene.shape.Rectangle squareDrawing = new javafx.scene.shape.Rectangle();
     // The text for area output

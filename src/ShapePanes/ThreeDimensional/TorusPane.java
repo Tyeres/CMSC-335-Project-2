@@ -18,18 +18,18 @@ import javafx.scene.layout.VBox;
 
 import java.util.Objects;
 
-public class TorusPane extends VBox implements Control {
+public class TorusPane extends VBox {
 
     // The shape for calculation
     private final Torus torus = new Torus();
     // Enter small radius here
     private final TextField smallRadiusTextInput = new TextField();
     // Alternative to the above text input. Select a radius instead.
-    private final ComboBox<Integer> smallRadiusComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> smallRadiusComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Enter big radius here
     private final TextField bigRadiusTextInput = new TextField();
     // Alternative to the above text input. Select a height instead.
-    private final ComboBox<Integer> bigRadiusComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> bigRadiusComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display torus here
     private final ImageView torusDrawing = new ImageView();
     // The text for volume output

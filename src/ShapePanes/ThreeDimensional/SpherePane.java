@@ -28,7 +28,7 @@ public class SpherePane extends VBox implements Control {
     // Enter radius here
     private final TextField radiusTextInput = new TextField();
     // Alternative to the above text input. Select a radius instead.
-    private final ComboBox<Integer> radiusComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> radiusComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display sphere here
     private final ImageView sphereDrawing = new ImageView();
     // The text for volume output

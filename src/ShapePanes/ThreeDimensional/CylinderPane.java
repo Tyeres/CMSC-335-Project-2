@@ -27,11 +27,11 @@ public class CylinderPane extends VBox implements Control {
     // Enter radius here
     private final TextField radiusTextInput = new TextField();
     // Alternative to the above text input. Select a radius instead.
-    private final ComboBox<Integer> radiusComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> radiusComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Enter height here
     private final TextField heightTextInput = new TextField();
     // Alternative to the above text input. Select a height instead.
-    private final ComboBox<Integer> heightComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> heightComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display cylinder here
     private final ImageView cylinderDrawing = new ImageView();
     // The text for volume output

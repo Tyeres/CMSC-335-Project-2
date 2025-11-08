@@ -23,11 +23,11 @@ public class TrianglePane extends VBox implements Control {
     // Enter base here
     private final TextField baseTextInput = new TextField();
     // Alternative to the above text input. Select a base instead.
-    private final ComboBox<Integer> baseComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> baseComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Enter height here
     private final TextField heightTextInput = new TextField();
     // Alternative to the above text input. Select a height instead.
-    private final ComboBox<Integer> heightComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> heightComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display triangle here
     private final javafx.scene.shape.Polygon triangleDrawing = new javafx.scene.shape.Polygon();
     // The text for area output

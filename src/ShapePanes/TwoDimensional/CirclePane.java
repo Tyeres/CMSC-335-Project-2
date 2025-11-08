@@ -23,7 +23,7 @@ public class CirclePane extends VBox implements Control {
     // Enter radius here
     private final TextField radiusTextInput = new TextField();
     // Alternative to the above text input. Select a radius instead.
-    private final ComboBox<Integer> radiusComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> radiusComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display circle here
     private final javafx.scene.shape.Circle circleDrawing = new javafx.scene.shape.Circle();
     // The text for area output

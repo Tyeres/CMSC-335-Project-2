@@ -23,11 +23,11 @@ public class RectanglePane extends VBox implements Control {
     // Enter length here
     private final TextField lengthTextInput = new TextField();
     // Alternative to the above text input. Select a length instead.
-    private final ComboBox<Integer> lengthComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> lengthComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Enter height here
     private final TextField heightTextInput = new TextField();
     // Alternative to the above text input. Select a height instead.
-    private final ComboBox<Integer> heightComboBox = new ComboBox<>(getListOfIntegers());
+    private final ComboBox<Integer> heightComboBox = new ComboBox<>(Control.getListOfIntegers());
     // Display rectangle here
     private final javafx.scene.shape.Rectangle rectangleDrawing = new javafx.scene.shape.Rectangle();
     // The text for area output
