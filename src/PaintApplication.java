@@ -58,8 +58,14 @@ public class PaintApplication extends Application {
             // Remove the displayed shape
             mainPane.getChildren().remove(1);
 
+            // The user is able to deselect an option using ctrl + click. That breaks the program.
+            // Don't let the user have null selected
+            String chosenShape = shapeList.getSelectionModel().getSelectedItem();
+            if (chosenShape == null)
+                chosenShape = "Circle"; // Default pane
+
             // Add selected pane
-            switch (shapeList.getSelectionModel().getSelectedItem()) {
+            switch (chosenShape) {
                 case "Circle":
                     mainPane.getChildren().add(shapePaneArray[0]);
                     break;
@@ -84,7 +90,7 @@ public class PaintApplication extends Application {
                 case "Cylinder":
                     mainPane.getChildren().add(shapePaneArray[7]);
                     break;
-                case "Torus":
+                default: // The torus
                     mainPane.getChildren().add(shapePaneArray[8]);
                     break;
             }
